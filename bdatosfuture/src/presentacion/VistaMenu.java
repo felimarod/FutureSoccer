@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vista;
+package presentacion;
 
 /**
  *
  * @author Usuario
  */
-public class Menu extends javax.swing.JFrame {
+public class VistaMenu extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public Menu() {
+    public VistaMenu() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -43,7 +43,7 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 51, 51));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\Logo Future Blanco PEQ.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/Logo Future PEQ.png"))); // NOI18N
 
         regboton.setText("Registrar");
         regboton.addActionListener(new java.awt.event.ActionListener() {

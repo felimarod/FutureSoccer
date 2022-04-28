@@ -2,16 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
+package presentacion;
 
 /**
  *
  * @author Usuario
  */
-public class Registrar extends javax.swing.JFrame {
+public class VistaRegistrar extends javax.swing.JFrame {
 
 
-    public Registrar() {
+    public VistaRegistrar() {
         initComponents();
         setLocationRelativeTo(null);
 
@@ -136,7 +136,7 @@ public class Registrar extends javax.swing.JFrame {
 
         txtPiej.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo Future PEQ.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/Logo Future PEQ.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -282,7 +282,6 @@ public class Registrar extends javax.swing.JFrame {
         txtApellidosa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnreg.setBackground(new java.awt.Color(204, 204, 204));
-        btnreg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\guardar.png")); // NOI18N
         btnreg.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnreg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -291,7 +290,6 @@ public class Registrar extends javax.swing.JFrame {
         });
 
         btnsalirmenu.setBackground(new java.awt.Color(204, 204, 204));
-        btnsalirmenu.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\salir1.png")); // NOI18N
         btnsalirmenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -358,7 +356,7 @@ public class Registrar extends javax.swing.JFrame {
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDocumentoa, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtApellidosa, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnsalirmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnreg, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)

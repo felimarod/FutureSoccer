@@ -2,25 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Controlador;
+package persistencia;
 
-import Modelo.Acudiente;
+import logica.Acudiente;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import Control.conexion.conexion;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
-public class AcuDAO {
+public class DAOAcudiente {
 
     private Connection con;
     private Statement st;
     private ResultSet rs;
     private PreparedStatement ps;
 
-    public AcuDAO() {
+    public DAOAcudiente() {
         con = null;
         st = null;
         rs = null;
@@ -29,7 +28,7 @@ public class AcuDAO {
     public void insertarDatos(Acudiente acudiente) {
         try {
 
-            con = conexion.getConection();
+            con = Conexion.getConection();
             ps = con.prepareStatement("INSERT INTO acudiente(DocAcudiente,NombresAcu,ApellidosAcu,TelCelularAcu,CorreoAcu) VALUES (?,?,?,?,?)");
             ps.setInt(1, acudiente.getDocumento());
             ps.setString(2, acudiente.getNombres());

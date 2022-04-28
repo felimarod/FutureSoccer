@@ -2,30 +2,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Controlador;
+package presentacion;
 
-import Modelo.Jugadora;
-import vista.Menu;
-import vista.Registrar;
+import logica.*;
+import persistencia.*;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import Controlador.DAOjugadora;
-import Modelo.Acudiente;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import vista.BuscarJugadora;
 
 public final class Controlador implements ActionListener {
 
-    private Menu menu;
-    private Registrar reg;
+    private VistaMenu menu;
+    private VistaRegistrar reg;
     private Jugadora nuevajug;
     private Acudiente nuevoacu;
-    private DAOjugadora miDAO;
-    private AcuDAO misegDAO;
-    private BuscarJugadora buscar;
+    private DAOJugadora miDAO;
+    private DAOAcudiente misegDAO;
+    private VistaBuscarJugadora buscar;
 
-    public Controlador(Menu menu, Registrar registrar, BuscarJugadora buscar) {
+    public Controlador(VistaMenu menu, VistaRegistrar registrar, VistaBuscarJugadora buscar) {
 
         this.menu = menu;
         this.reg = registrar;
@@ -50,7 +47,7 @@ public final class Controlador implements ActionListener {
                     Integer.parseInt(reg.txtCategoriaj.getText()),
                     Integer.parseInt(reg.txtDocumentoa.getText())
             );
-            miDAO = new DAOjugadora();
+            miDAO = new DAOJugadora();
             nuevajug.setEPS(reg.txtEPSj.getText());
             nuevajug.setTelfijo(reg.txtTelj.getText());
             nuevajug.setTelcel(reg.txtCelj.getText());
@@ -70,7 +67,7 @@ public final class Controlador implements ActionListener {
                     reg.txtApellidosa.getText(),
                     reg.txtCelulara.getText()
             );
-            misegDAO = new AcuDAO();
+            misegDAO = new DAOAcudiente();
             nuevoacu.setCorreo(reg.txtEPSj.getText());
             this.misegDAO.insertarDatos(nuevoacu);
         } catch (Exception e) {
@@ -80,7 +77,7 @@ public final class Controlador implements ActionListener {
     }
 
     public void buscarJugadoraporCategoria() {
-        miDAO = new DAOjugadora();
+        miDAO = new DAOJugadora();
         DefaultTableModel tjugadoras = new DefaultTableModel();
         tjugadoras.addColumn("DOCUMENTO");
         tjugadoras.addColumn("NOMBRES");
@@ -114,7 +111,7 @@ public final class Controlador implements ActionListener {
     }
 
     public void eliminarRegistro() {
-        miDAO = new DAOjugadora();
+        miDAO = new DAOJugadora();
         String doc = buscar.tablajugadoras.getModel().getValueAt(buscar.tablajugadoras.getSelectedRow(), 0).toString();
         int numdoc = Integer.parseInt(doc);
         miDAO.eliminarJugadora(numdoc);

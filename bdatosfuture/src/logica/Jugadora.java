@@ -1,4 +1,4 @@
-package Modelo;
+package logica;
 
 public class Jugadora {
 

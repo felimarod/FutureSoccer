@@ -1,5 +1,5 @@
 
-package Control.conexion;
+package persistencia;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 
-public class conexion {
+public class Conexion {
     
     private static Connection cn = null;
     private static String DRIVER = "com.mysql.jdbc.Driver";

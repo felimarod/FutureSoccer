@@ -2,28 +2,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Controlador;
+package persistencia;
 
-import Modelo.Jugadora;
-import Controlador.Controlador;
+import logica.Jugadora;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import Control.conexion.conexion;
 import java.awt.List;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class DAOjugadora {
+public class DAOJugadora {
 
     private Connection con;
     private Statement st;
     private ResultSet rs;
     private PreparedStatement ps;
 
-    public DAOjugadora() {
+    public DAOJugadora() {
         con = null;
         st = null;
         rs = null;
@@ -32,7 +30,7 @@ public class DAOjugadora {
     public void insertarDatos(Jugadora jugadora) {
         try {
 
-            con = conexion.getConection();
+            con = Conexion.getConection();
             ps = con.prepareStatement("INSERT INTO jugadoras(Documento,Nombres,Apellidos,TipodeSangre,EPS,Posición,Piedominante,TelFijoJugadora,TelCelularJugadora,NumCategoria,DocAcudiente) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
             ps.setInt(1, jugadora.getDocumento());
             ps.setString(2, jugadora.getNombres());
@@ -64,7 +62,7 @@ public class DAOjugadora {
         ArrayList<Jugadora> jugadoras = new ArrayList<>();
 
         try {
-            con = conexion.getConection();
+            con = Conexion.getConection();
             Statement leer = con.createStatement();
             ResultSet resultado = leer.executeQuery("SELECT * FROM jugadoras WHERE NumCategoria=" + Categoria + "");
             while (resultado.next()) {
@@ -101,7 +99,7 @@ public class DAOjugadora {
 
     public void eliminarJugadora(int numdoc) {
         try {
-            con = conexion.getConection();
+            con = Conexion.getConection();
             String consulta = "DELETE FROM jugadoras WHERE Documento=" + numdoc + "";
             st = con.createStatement();
             st.executeUpdate(consulta);
